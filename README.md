@@ -1,4 +1,4 @@
-** Trabalho Final de Algoritmos **
+**Trabalho Final de Algoritmos**
 
 O trabalho tem o seguinte objetivo: 
  - Criar um programa para o controle de alguns dados, sendo estes de sua escolha;
