@@ -171,7 +171,7 @@ void consultar_aluguel(Aluguel *alugueis, int qtd_aluguel, Cliente *clientes, in
 //////////////////////
 void remover_livro(Livro *livros, int *qtd_livro, Aluguel *alugueis, int *qtd_aluguel);
 void remover_cliente(Cliente *clientes, int *qtd_cliente, Aluguel *alugueis, int *qtd_aluguel);
-void remover_aluguel(Aluguel *alugueis, int *qtd_aluguel);
+void remover_aluguel(Aluguel *alugueis, int *qtd_aluguel, Livro *livros, int *qtd_livro);
 
 //////////////////////
 //                  //
@@ -279,7 +279,7 @@ int main() {
           consultar_aluguel(alugueis, qtd_aluguel, clientes, qtd_cliente, livros, qtd_livro);
           break;
         case 4:
-          remover_aluguel(alugueis, &qtd_aluguel);
+          remover_aluguel(alugueis, &qtd_aluguel, livros, &qtd_livro);
           registrar_quantidades(&qtd_livro, &qtd_cliente, &qtd_aluguel);
           break;
       } break;
@@ -784,7 +784,7 @@ int busca_aluguel(Aluguel *alugueis, int qtd_aluguel, int id) {
 //                  //
 //     REGISTRO     //
 //                  //
-//////////////////////
+/////////////////////
 void registrar_livro(Livro **livros, int *qtd_livro){ //n�o � necessario tamanho de cliente e aluguel
     int flag;
     Livro aux;
@@ -798,9 +798,9 @@ void registrar_livro(Livro **livros, int *qtd_livro){ //n�o � necessario tam
         printf("Digite o id do Livro: ");
         clean(stdin);
         scanf("%d", &aux.id);
-        if(aux.id > 999 && aux.id < 10000){ //Verifica se o id � v�lido
+        if (aux.id > 999 && aux.id < 10000){ //Verifica se o id � v�lido
           if (busca_livro(*livros, *qtd_livro, aux.id) != -1) { // verifica se a id ja existe
-            printf("Essa ID j� existe, digite outra ID.\n");
+            printf("Essa ID ja existe, digite outra ID.\n");
             flag = 1;
           }
         } else {
@@ -2013,9 +2013,10 @@ void remover_cliente(Cliente *clientes, int *qtd_cliente, Aluguel *alugueis, int
   getchar();
 }
 
-void remover_aluguel(Aluguel *alugueis, int *qtd_aluguel) {
+void remover_aluguel(Aluguel *alugueis, int *qtd_aluguel, Livro *livros, int *qtd_livro) {
   int id, flag;
   int aluguel_ind;
+  int livro_ind;
 
   system(command);
   printf("Selecionado a remocao de aluguel...\n");
@@ -2036,12 +2037,16 @@ void remover_aluguel(Aluguel *alugueis, int *qtd_aluguel) {
   aluguel_ind = busca_aluguel(alugueis, *qtd_aluguel, id);
 
   if (aluguel_ind != -1) {
+    livro_ind = busca_livro(livros, *qtd_livro, alugueis[aluguel_ind].id_livro);
+
     for (int i = aluguel_ind; i < *qtd_aluguel - 1; i ++) {
       alugueis[i] = alugueis[i + 1];
     }
     (*qtd_aluguel)--;
+    livros[livro_ind].estoque++;
 
     escrever_aluguel(alugueis, *qtd_aluguel, "wb"); // salvando um aluguel a menos
+    escrever_livro(livros, *qtd_livro, "wb");
 
     printf("Aluguel removido com sucesso.\n");
   } else {
