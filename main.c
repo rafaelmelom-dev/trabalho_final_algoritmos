@@ -1,6 +1,5 @@
 #include <stdbool.h>
 #include <stdio.h>
-#include <stdio_ext.h>
 #include <stdlib.h>
 #include <string.h>
 #include <locale.h>
@@ -27,6 +26,7 @@ char command[] = "cls";
 char command[] = "cls";
 #define clean fflush
 #else
+#include <stdio_ext.h> // importando ext caso nao for windows
 char command[] = "clear";
 #define clean __fpurge
 #endif
@@ -220,7 +220,7 @@ int main() {
       free(clientes);
       free(alugueis);
       exit(0);
-    case 6: 
+    case 6:
         mostrar_todos(livros, qtd_livro, clientes, qtd_cliente, alugueis, qtd_aluguel); break;
     case 5:
       gerar_relatorio(clientes, livros, alugueis, qtd_livro, qtd_cliente, qtd_aluguel); break;
@@ -543,7 +543,7 @@ void mostrar_todos(Livro *livros, int qtd_livro, Cliente *clientes, int qtd_clie
   int opt;
   int flag;
   char estudante[6];
-  
+
   system(command);
 
   do {
@@ -560,7 +560,7 @@ void mostrar_todos(Livro *livros, int qtd_livro, Cliente *clientes, int qtd_clie
     clean(stdin);
 
     if (opt < 1 || opt > 4) {
-      printf("Opcao invalida, pressione enter para continuar.\n");
+      printf("Opcao invalida, pressione enter para continuar...");
       getchar();
       flag = 1;
     }
@@ -593,7 +593,7 @@ void mostrar_todos(Livro *livros, int qtd_livro, Cliente *clientes, int qtd_clie
         printf("CPF: %s\n", clientes[i].cpf);
         printf("Estudante: %s\n\n", estudante);
         printf("++++++++++++++++++++\n\n");
-      } 
+      }
     } break;
     case 3: {
       printf("Dados dos alugueis: \n\n");
@@ -602,22 +602,23 @@ void mostrar_todos(Livro *livros, int qtd_livro, Cliente *clientes, int qtd_clie
         flag = 1;
         printf("ID Aluguel: %d\n", alugueis[i].id_aluguel);
         printf("ID Livro: %d - CPF: %s\n", alugueis[i].id_livro, alugueis[i].id_cliente);
-        printf("Data de Aluguel: %d/%d/%d\n", 
+        printf("Data de Aluguel: %d/%d/%d\n",
                alugueis[i].data_aluguel.dia,
                alugueis[i].data_aluguel.mes,
                alugueis[i].data_aluguel.ano);
-        printf("Data de Devolucao: %d/%d/%d\n",
+        printf("Data de Devolucao: %d/%d/%d\n\n",
                alugueis[i].data_devolucao.dia,
                alugueis[i].data_devolucao.mes,
                alugueis[i].data_devolucao.ano);
         printf("++++++++++++++++++++\n\n");
       }
     } break;
+    case 4: return;
     default: break;
   }
 
   if (flag == 1) { // nao ha nenhum dado no tipo escolhido
-    printf("Nao foi encontrado nenhum dado no vetor escolhido!!!\n"); 
+    printf("Nao foi encontrado nenhum dado no vetor escolhido!!!\n");
   }
 
   clean(stdin);
