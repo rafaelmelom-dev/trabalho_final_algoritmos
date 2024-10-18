@@ -545,19 +545,23 @@ void mostrar_todos(Livro *livros, int qtd_livro, Cliente *clientes, int qtd_clie
   char estudante[6];
   
   system(command);
-  printf("Mostando todos os dados do vetor: \n\n");
 
   do {
     flag = 0;
+    system(command);
+    printf("Mostrando todos os elementos\n");
+    printf("Opcoes: \n");
     printf("1. Livros\n");
     printf("2. Clientes\n");
     printf("3. Alugueis\n");
     printf("4. Voltar\n");
     printf("Escolha uma opcao: ");
     scanf("%d", &opt);
+    clean(stdin);
 
     if (opt < 1 || opt > 4) {
-      printf("Opcao invalida.\n");
+      printf("Opcao invalida, pressione enter para continuar.\n");
+      getchar();
       flag = 1;
     }
   } while (flag != 0);
@@ -609,7 +613,7 @@ void mostrar_todos(Livro *livros, int qtd_livro, Cliente *clientes, int qtd_clie
         printf("++++++++++++++++++++\n\n");
       }
     } break;
-    defaullt: break;
+    default: break;
   }
 
   if (flag == 1) { // nao ha nenhum dado no tipo escolhido
