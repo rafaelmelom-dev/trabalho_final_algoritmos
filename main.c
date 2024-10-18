@@ -502,7 +502,7 @@ void gerar_backup (Livro *livros, int *qtd_livro,Cliente *clientes, int *qtd_cli
   if (livro_file) {
     fwrite(livros, sizeof(Livro), *qtd_livro, livro_file);
     fclose(livro_file);
-  } 
+  }
 
   if (cliente_file) {
     fwrite(clientes, sizeof(Cliente), *qtd_cliente, cliente_file);

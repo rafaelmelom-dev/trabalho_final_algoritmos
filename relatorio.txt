@@ -1,5 +1,5 @@
  ========== RELATORIO ========== 
-Data de inicio: 1/1/2024
+Data de inicio: 12/12/2022
 
 
 Nome: Leandro Rabelo - Idade: 18
@@ -23,6 +23,30 @@ Nome: Harry Potter e a Pedra Filosofal - Genero: F
 ID: 1002 - Preco: 59.90 - Estoque: 17
 
 Data do Aluguel: 15/10/2024
+
+++++++++++++++++++++
+
+Nome: Ana Silva - Idade: 22
+CPF: 12345678901
+Email: ana@gmail.com
+Estudante: Sim
+
+Nome: Harry Potter e a Pedra Filosofal - Genero: F
+ID: 1002 - Preco: 59.90 - Estoque: 17
+
+Data do Aluguel: 16/10/2024
+
+++++++++++++++++++++
+
+Nome: Carlos Souza - Idade: 35
+CPF: 98765432100
+Email: carlos@gmail.com
+Estudante: Nao
+
+Nome: Ulisses - Genero: C
+ID: 1011 - Preco: 65.00 - Estoque: 4
+
+Data do Aluguel: 16/10/2024
 
 ++++++++++++++++++++
 
@@ -55,30 +79,6 @@ CPF: 12345678901
 Email: ana@gmail.com
 Estudante: Sim
 
-Nome: Harry Potter e a Pedra Filosofal - Genero: F
-ID: 1002 - Preco: 59.90 - Estoque: 17
-
-Data do Aluguel: 16/10/2024
-
-++++++++++++++++++++
-
-Nome: Carlos Souza - Idade: 35
-CPF: 98765432100
-Email: carlos@gmail.com
-Estudante: Nao
-
-Nome: Ulisses - Genero: C
-ID: 1011 - Preco: 65.00 - Estoque: 4
-
-Data do Aluguel: 16/10/2024
-
-++++++++++++++++++++
-
-Nome: Ana Silva - Idade: 22
-CPF: 12345678901
-Email: ana@gmail.com
-Estudante: Sim
-
 Nome: Dom Quixote - Genero: F
 ID: 1003 - Preco: 59.90 - Estoque: 0
 
@@ -98,30 +98,6 @@ Data do Aluguel: 17/10/2024
 
 ++++++++++++++++++++
 
-Nome: Layon Almeida - Idade: 18
-CPF: 12345678903
-Email: layon@yahoo.com
-Estudante: Sim
-
-Nome: Frankenstein - Genero: D
-ID: 1009 - Preco: 28.00 - Estoque: 8
-
-Data do Aluguel: 17/10/2024
-
-++++++++++++++++++++
-
-Nome: Beatriz Lima - Idade: 19
-CPF: 45612378901
-Email: beatriz@yahoo.com
-Estudante: Sim
-
-Nome: Odisseia - Genero: D
-ID: 1007 - Preco: 44.90 - Estoque: 11
-
-Data do Aluguel: 17/10/2024
-
-++++++++++++++++++++
-
 Nome: Rafael Moreira - Idade: 18
 CPF: 12345678900
 Email: rafael@gmail.com
@@ -134,13 +110,13 @@ Data do Aluguel: 17/10/2024
 
 ++++++++++++++++++++
 
-Nome: Carlos Souza - Idade: 35
-CPF: 98765432100
-Email: carlos@gmail.com
+Nome: Maria Oliveira - Idade: 40
+CPF: 78945612311
+Email: maria@gmail.com
 Estudante: Nao
 
-Nome: Moby Dick - Genero: F
-ID: 1006 - Preco: 30.00 - Estoque: 4
+Nome: Harry Potter e a Pedra Filosofal - Genero: F
+ID: 1002 - Preco: 59.90 - Estoque: 17
 
 Data do Aluguel: 17/10/2024
 
@@ -158,13 +134,37 @@ Data do Aluguel: 17/10/2024
 
 ++++++++++++++++++++
 
-Nome: Maria Oliveira - Idade: 40
-CPF: 78945612311
-Email: maria@gmail.com
+Nome: Layon Almeida - Idade: 18
+CPF: 12345678903
+Email: layon@yahoo.com
+Estudante: Sim
+
+Nome: Frankenstein - Genero: D
+ID: 1009 - Preco: 28.00 - Estoque: 8
+
+Data do Aluguel: 17/10/2024
+
+++++++++++++++++++++
+
+Nome: Carlos Souza - Idade: 35
+CPF: 98765432100
+Email: carlos@gmail.com
 Estudante: Nao
 
-Nome: Harry Potter e a Pedra Filosofal - Genero: F
-ID: 1002 - Preco: 59.90 - Estoque: 17
+Nome: Moby Dick - Genero: F
+ID: 1006 - Preco: 30.00 - Estoque: 4
+
+Data do Aluguel: 17/10/2024
+
+++++++++++++++++++++
+
+Nome: Beatriz Lima - Idade: 19
+CPF: 45612378901
+Email: beatriz@yahoo.com
+Estudante: Sim
+
+Nome: Odisseia - Genero: D
+ID: 1007 - Preco: 44.90 - Estoque: 11
 
 Data do Aluguel: 17/10/2024
 
